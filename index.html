@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="options" style="display: flex; flex-direction: column; row-gap: 0.6rem;">
+            <button class="signUp" onClick="showSignUp()" id="signUpButton">SIGN UP</button>
+            <button onClick="showLogin()" id="signInButton">SIGN IN</button>
+        </div>
+        <div class="box">
+            <div class="box-close" style="display: flex; justify-content: flex-end;" onClick="refresh()">
+                <img src="./icons/cancel.svg" style="cursor: pointer;">
+            </div>
+            <div class="box-head">
+                <div id="sigup" onClick="showSignUp()">
+                    <h2>Sign Up</h2>
+                </div>
+                <div id="login" onClick="showLogin()">
+                    <h2>Log In</h2>
+                </div>
+            </div>
+            <div class="line">
+                <h2 style="color: #ffffff; font-size: 30px;" id="line"></h2>
+            </div>
+            <div id="signup-content">
+                <!-- <button onclick="deleting()">Delete</button> -->
+                <form onSubmit="return signUpCheck(event)">
+                    <div class="horizontal">
+                        <div class="username">
+                            <input type="text" maxlength="10" placeholder="Username" id="username"
+                                title="Should Be Less Than 11 Characters">
+                            <br>
+                            <span id="username-error" style="color: #f30808;"></span>
+                        </div>
+                        <div class="email">
+                            <input type="email" placeholder="Email" id="email">
+                            <br>
+                            <span id="email-error" style="color: #f30808;"></span>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="horizontal">
+                        <div class="password">
+                            <input type="password" minlength="5" maxlength="9" placeholder="Password" id="password"
+                                title="Atleast 5 characters & Max 9 characters">
+                            <br>
+                            <span id="password-error" style="color: #f30808;"></span>
+                        </div>
+                        <div class="confirm-password">
+                            <input type="password" minlength="5" maxlength="9" placeholder="Confirm Password"
+                                id="confirmPassword">
+                            <br>
+                            <span id="confirm-Password-error" style=" color: #f30808;"></span>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="single">
+                        <textarea id="address" cols="60" rows="2" placeholder="Enter Your Addresss"></textarea>
+                        <br>
+                        <span id="addressError" style=" color: #f30808;"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="horizontal">
+                        <div class="dob">
+                            <input type="date" id="dob">
+                            <br>
+                            <span id="dobError" style=" color: #f30808;"></span>
+                        </div>
+                        <div class="gender">
+                            <div class="male">
+                                <input type="radio" name="gender" id="male"><label for="male">Male</label>
+                            </div>
+                            <div class="female">
+                                <input type="radio" name="gender" id="female"><label for="male">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="horizontal">
+                        <div class="number">
+                            <input type="tel" maxlength="11" placeholder="Mob:" id="number">
+                            <br>
+                            <span id="number-error" style="font-size: 16px; color: #f30808;"></span>
+                        </div>
+                        <div class="postal">
+                            <input type="tel" maxlength="5" placeholder="Postal Code" id="postal">
+                            <br>
+                            <span id="postal-error" style="font-size: 16px; color: #f30808;"></span>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="submit">
+                        <input type="submit" value="" id="submit">
+                    </div>
+                </form>
+            </div>
+            <div id="login-content">
+                <form onSubmit="return loginCheck(event)">
+                    <div class="login-content2">
+                        <div class="login-error">
+                            <h2 style="color: red;">Invalid Email OR Password!</h2>
+                        </div>
+                        <div class="login-email">
+                            <input type="email" placeholder="Email" id="loginEmail">
+                        </div>
+                        <div class="login-pasword">
+                            <input type="password" minlength="5" maxlength="9" placeholder="Password"
+                                id="loginPassword">
+                        </div>
+                        <div class="message">
+                            <h2 style="color: #ffffff;">Not Have An Account? <span onClick="showSignUp()"
+                                    style="cursor: pointer;">Sign UP</span> Here</h2>
+                        </div>
+                        <div class="submit2">
+                            <input type="submit" value="" id="submit2">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div id="container2">
+        <div id="options2" style="display: flex; flex-direction: column; row-gap: 0.6rem;">
+            <button onClick="viewMainProfile()">View Dashboard</button>
+            <button onClick="signOut()">Sign Out</button>
+        </div>
+    </div>
+    <div id="container3">
+        <div class="profile">
+            <div class="profile-head">
+                <div class="logo">
+                    <h2>Four Tech</h2>
+                </div>
+                <div class="buttons">
+                    <button onClick="viewProfile()">View Profile</button>
+                    <button onClick="viewAssignment()" id="assignment-text"></button>
+                    <button onClick="logOut()">Log Out</button>
+                    <button onClick="signOut()">Sign Out</button>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="user-profile">
+                <div class="user-data">
+                    <div class="profile-closing">
+                        <img src="./icons/cancel.svg" style="height: 40px; width: 40px; cursor: pointer;"
+                            onClick="closeProfile()">
+                    </div>
+                    <br>
+                    <div class="user-data-shown">
+                        <div class="user-name">
+                            <h2>Username: </h2>
+                            <h2 id="user-data-username"></h2>
+                        </div>
+                        <div class="user-email">
+                            <h2>Email: </h2>
+                            <h2 id="user-data-email"></h2>
+                        </div>
+                        <div class="user-gender">
+                            <h2>Gender: </h2>
+                            <h2 id="user-data-gender"></h2>
+                        </div>
+                        <div class="user-dob">
+                            <h2>DOB: </h2>
+                            <h2 id="user-data-dob"></h2>
+                        </div>
+                        <div class="user-number">
+                            <h2>Number: </h2>
+                            <h2 id="user-data-number"></h2>
+                        </div>
+                        <div class="user-postal">
+                            <h2>Postal: </h2>
+                            <h2 id="user-data-postal"></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="assignments">
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="line1">
+                <div class="left">
+                    <h2>Football Data</h2>
+                    <button><a href="" target="_blank">View</a></button>
+                </div>
+                <div class="mid">
+                    <h2>Resturant Menu</h2>
+                    <button><a href="https://resturant-menu-using-objects.netlify.app" target="_blank">View</a></button>
+                </div>
+                <div class="right">
+                    <h2>Employees Data</h2>
+                    <button><a href="https://my-employees-data.netlify.app" target="_blank">View</a></button>
+                </div>
+            </div>
+            <div class="line2">
+                <div class="left">
+                    <h2>Vowels Finding</h2>
+                    <button><a href="https://vowels-finding.netlify.app" target="_blank">View</a></button>
+                </div>
+                <div class="mid">
+                    <h2>Scientific Calculator</h2>
+                    <button><a href="https://abdul-scientific-calculator.netlify.app" target="_blank">View</a></button>
+                </div>
+                <div class="right">
+                    <h2>Sign UP / Sign IN Form</h2>
+                    <button><a href="https://abdul-log-sign.netlify.app" target="_blank">View</a></button>
+                </div>
+            </div>
+            <div class="line3">
+                <div class="left">
+                    <h2>Colour Balls Game</h2>
+                    <button><a href="https://colour-balls-game.netlify.app" target="_blank">View</a></button>
+                </div>
+                <div class="mid">
+                    <h2>Digital Clock</h2>
+                    <button><a href="https://abdul-digital-clock.netlify.app" target="_blank">View</a></button>
+                </div>
+                <div class="right">
+                    <h2>To Do Web</h2>
+                    <button><a href="https://my-todo-web.netlify.app" target="_blank">View</a></button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>

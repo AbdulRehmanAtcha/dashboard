@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,900&display=swap');
+
+html {
+    font-size: 62.5%;
+    /* height: 50%; */
+    /* 1 rem = 16px by default and here 62.5% of 16px = 10px; */
+    /* Now 1 rem = 10px */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+#c1bdba==> body backround
+#13232f==> div background
+#ffffff==> font color
+#176d56==> input border
+#127a5e==> tabs
+ */
+body {
+    /* background: linear-gradient(45deg,  #353032 30%, #000000); */
+    background-color: #afaeae;
+    overflow: hidden;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#container,
+#container2 {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#options button,
+#options2 button {
+    height: 4rem;
+    width: 16rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0px -0.4rem 0.8rem black inset,
+        0px 0.3rem 0.8rem grey;
+    font-weight: bold;
+    color: rgb(44, 39, 39);
+    transition: all 0.2s ease;
+    background-color: #1e886c;
+    color: #ffffff;
+    /* display: none; */
+}
+
+#options button:hover,
+#options2 button:hover {
+    background-color: #0b6b51;
+    font-size: 1.7rem;
+    box-shadow: 0px -0.4rem 0.5rem black inset,
+        0px 0.3rem 0.8rem white;
+}
+
+.box {
+    height: 630px;
+    width: 550px;
+    background-color: #13232f;
+    border-radius: 0.5rem;
+    user-select: none;
+}
+
+.box-head {
+    margin-top: 40px;
+    height: 55px;
+    width: 500px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-around;
+    margin-left: 25px;
+}
+
+#sigup {
+    height: 55px;
+    width: 270px;
+    /* background-color: #127a5e; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background 0.8s ease-in-out;
+}
+
+#login {
+    height: 55px;
+    width: 270px;
+    /* background-color: grey; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ddd;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background 1.1s ease-in-out;
+}
+
+.active {
+    background-color: #0ed6a1;
+    /*  */
+}
+
+.non-active {
+    background-color: grey;
+}
+
+#sigup:hover,
+#login:hover {
+    background-color: #127a5e;
+}
+
+.line {
+    height: 50px;
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.horizontal {
+    display: flex;
+    justify-content: space-around;
+}
+
+.username input,
+.email input,
+.password input,
+.confirm-password input,
+.number input,
+.postal input {
+    height: 30px;
+    width: 200px;
+    background: transparent;
+    color: #ffffff;
+    border-radius: 2px;
+    font-size: 15px;
+}
+
+input {
+    border: 3px solid #ccc;
+    transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input:focus {
+    border: 3px solid #1ab188;
+}
+
+.username input:placeholder-shown,
+.email input:placeholder-shown,
+.password input:placeholder-shown,
+.confirm-password input:placeholder-shown,
+.number input:placeholder-shown,
+.postal input:placeholder-shown {
+    font-weight: bolder;
+    font-size: 15px;
+    /* padding-left: 3px; */
+}
+
+.single {
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.single textarea {
+    background-color: rgb(230, 224, 224);
+    resize: none;
+    /* margin-left: 3px; */
+}
+
+.single textarea:placeholder-shown {
+    padding-top: 10px;
+}
+
+.horizontal .dob input {
+    width: 200px;
+    position: relative;
+    /* bottom: 200px; */
+    left: 4px;
+    height: 30px;
+}
+
+.gender {
+    /* background-color: white; */
+    width: 200px;
+    position: relative;
+    height: 35px;
+    left: 1px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    /* right: 40px; */
+    top: 3px;
+}
+
+.gender label {
+    font-size: 2rem;
+    color: #ffffff;
+    position: relative;
+    bottom: 3px;
+}
+
+.gender input {
+    height: 22px;
+    width: 22px;
+    accent-color: #1ab188;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=submit] {
+    width: 530px;
+    height: 55px;
+    font-size: 35px;
+    background-color: #0ed6a1;
+    border: 2px solid darkgrey;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #127a5e;
+
+}
+
+.login-content2 {
+    height: 350px;
+    width: 540px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+}
+
+.login-email input,
+.login-pasword input {
+    height: 35px;
+    width: 400px;
+}
+
+.submit2 input {
+    height: 45px;
+    width: 400px;
+}
+
+.login-error {
+    height: 55px;
+    width: 400px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+#container3 {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.profile-head {
+    height: 50px;
+    width: 1365px;
+    background-color: #13232f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+
+.profile-head .logo h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    color: aliceblue;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    column-gap: 2px;
+}
+
+.buttons button {
+    height: 30px;
+    width: 130px;
+    background-color: #0ed6a1;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.user-profile {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-data {
+    height: 500px;
+    width: 500px;
+    background-color: #13232f;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.profile-closing {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-data-shown {
+    height: 400px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.user-name,
+.user-email,
+.user-gender,
+.user-dob,
+.user-number,
+.user-postal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.user-name h2,
+.user-email h2,
+.user-gender h2,
+.user-dob h2,
+.user-number h2,
+.user-postal h2 {
+    font-size: 22px;
+    margin-left: 25px;
+
+}
+
+.assignments {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.line1,
+.line2,
+.line3 {
+    /* height: 100vh; */
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.line1 .left,
+.line1 .mid,
+.line1 .right,
+.line2 .left,
+.line2 .mid,
+.line2 .right,
+.line3 .left,
+.line3 .mid,
+.line3 .right {
+    height: 150px;
+    width: 250px;
+    background-color: #13232f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.line1 .left h2,
+.line1 .mid h2,
+.line1 .right h2,
+.line2 .left h2,
+.line2 .mid h2,
+.line2 .right h2,
+.line3 .left h2,
+.line3 .mid h2,
+.line3 .right h2 {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.line1 .left button,
+.line1 .mid button,
+.line1 .right button,
+.line2 .left button,
+.line2 .mid button,
+.line2 .right button,
+.line3 .left button,
+.line3 .mid button,
+.line3 .right button {
+    height: 50px;
+    width: 80px;
+    background-color: #0ed6a1;
+
+    border: none;
+    cursor: pointer;
+}
+
+.line1 .left button a,
+.line1 .mid button a,
+.line1 .right button a,
+.line2 .left button a,
+.line2 .mid button a,
+.line2 .right button a,
+.line3 .left button a,
+.line3 .mid button a,
+.line3 .right button a {
+    color: #ffffff;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+/* 
+.user-name:first-child,
+.user-email:first-child,
+.user-gender:first-child,
+.user-dob:first-child,
+.user-number:first-child,
+.user-postal:first-child{
+    margin-left: 25px;
+} */
+
+@media screen and (min-width:200px) and (max-width:350px) {
+    .box {
+        height: 580px;
+        width: 300px;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    #sigup,
+    #login {
+        height: 40px;
+        width: 120px;
+    }
+
+    .box-head {
+        width: 250px;
+        /* margin-bottom: ; */
+    }
+
+    .line {
+        width: 300px;
+    }
+
+    .username input,
+    .email input,
+    .password input,
+    .confirm-password input,
+    .number input,
+    .postal input {
+        width: 130px;
+        font-size: 10px;
+    }
+
+    .username input:placeholder-shown,
+    .email input:placeholder-shown,
+    .password input:placeholder-shown,
+    .confirm-password input:placeholder-shown,
+    .number input:placeholder-shown,
+    .postal input:placeholder-shown {
+        font-size: 10px;
+    }
+
+    .single {
+        width: 200px;
+    }
+
+    textarea {
+        width: 120%;
+        margin-left: 100px;
+        height: 15px;
+    }
+
+    .horizontal .dob input {
+        width: 120px;
+    }
+
+    .gender {
+        width: 120px;
+    }
+
+    .gender label {
+        font-size: 13px;
+    }
+
+    input[type="submit"] {
+        width: 300px;
+    }
+
+    span {
+        font-size: 10px;
+    }
+
+    .login-content2 {
+        width: 300px;
+    }
+
+    .login-email input,
+    .login-pasword input {
+        width: 240px;
+    }
+
+    .login-error {
+        width: 240px;
+        font-size: 12px;
+    }
+
+    .login-error h2 {
+        font-size: 18px;
+    }
+
+    .profile {
+        width: 350px;
+    }
+
+    .users-data {
+        width: 200px;
+    }
+
+    .users-data-name,
+    .users-data-email,
+    .users-data-dob,
+    .users-data-gender,
+    .users-data-number {
+        font-size: 12px
+    }
+
+    .users-data-email {
+        font-size: 10px;
+    }
+}
